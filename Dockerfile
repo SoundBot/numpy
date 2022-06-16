@@ -14,4 +14,7 @@ RUN wget https://git.alpinelinux.org/aports/plain/community/py3-numpy/APKBUILD
 RUN wget https://git.alpinelinux.org/aports/plain/community/py3-numpy/numpy-1.17.0-musl.patch
 RUN wget https://git.alpinelinux.org/aports/plain/community/py3-numpy/site.cfg
 
+RUN abuild deps
+RUN abuild unpack
+RUN abuild prepare
 RUN abuild -r package
