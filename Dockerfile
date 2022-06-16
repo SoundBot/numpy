@@ -18,4 +18,6 @@ RUN wget https://git.alpinelinux.org/aports/plain/community/py3-numpy/site.cfg
 # RUN abuild unpack
 # RUN abuild prepare
 # RUN abuild -r package
+
+RUN echo "%abuild ALL=(ALL) ALL" > /etc/sudoers.d/abuild
 RUN abuild -r
