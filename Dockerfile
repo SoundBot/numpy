@@ -21,6 +21,7 @@ WORKDIR /home/appuser
 
 RUN abuild-keygen -a -i -n
 
+COPY APKBUILD APKBUILD
 RUN wget https://git.alpinelinux.org/aports/plain/community/py3-numpy/numpy-1.17.0-musl.patch
 RUN wget https://git.alpinelinux.org/aports/plain/community/py3-numpy/site.cfg
 
