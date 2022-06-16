@@ -5,12 +5,12 @@ RUN apk add wget alpine-sdk sudo
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 RUN addgroup appuser abuild
 
-RUN echo "%abuild ALL=(ALL) ALL" > /etc/sudoers.d/abuild
-
-RUN abuild-keygen -a -i -n
+RUN echo "%abuild ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/abuild
 
 USER appuser
 WORKDIR /home/appuser
+
+RUN abuild-keygen -a -i -n
 
 RUN wget https://git.alpinelinux.org/aports/plain/community/py3-numpy/APKBUILD
 RUN wget https://git.alpinelinux.org/aports/plain/community/py3-numpy/numpy-1.17.0-musl.patch
