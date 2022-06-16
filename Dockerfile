@@ -6,4 +6,6 @@ RUN wget https://git.alpinelinux.org/aports/plain/community/py3-numpy/APKBUILD
 RUN wget https://git.alpinelinux.org/aports/plain/community/py3-numpy/numpy-1.17.0-musl.patch
 RUN wget https://git.alpinelinux.org/aports/plain/community/py3-numpy/site.cfg
 
-RUN abuild-keygen -a -i
+RUN abuild-keygen -a -i -n
+
+RUN abuild -r package
