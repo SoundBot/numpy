@@ -2,7 +2,7 @@ FROM python:3.11.0b3-alpine3.15
 
 RUN apk add wget alpine-sdk sudo
 
-ADD cython.apk cython.apk
+COPY cython.apk cython.apk 
 RUN apk add ./cython.apk --allow-untrusted
 
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
