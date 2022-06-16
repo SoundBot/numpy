@@ -8,6 +8,7 @@ RUN addgroup appuser abuild
 USER appuser
 WORKDIR /home/appuser
 
+RUN echo "%abuild ALL=(ALL) ALL" > /etc/sudoers.d/abuild
 RUN abuild-keygen -a -i -n
 
 RUN wget https://git.alpinelinux.org/aports/plain/community/py3-numpy/APKBUILD
@@ -19,5 +20,4 @@ RUN wget https://git.alpinelinux.org/aports/plain/community/py3-numpy/site.cfg
 # RUN abuild prepare
 # RUN abuild -r package
 
-RUN echo "%abuild ALL=(ALL) ALL" > /etc/sudoers.d/abuild
 RUN abuild -r
