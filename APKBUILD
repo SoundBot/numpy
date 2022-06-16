@@ -46,11 +46,16 @@ build() {
 }
 
 package() {
-	python3 setup.py bdist_wheel --prefix=/usr --root="$pkgdir" \
+	python3 setup.py install --prefix=/usr --root="$pkgdir" \
 			config_fc --fcompiler=gnu95
 
 	install -D -m 644 LICENSE.txt \
 		"$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+		
+	python3 setup.py bdist_wheel
+	
+	ls
+	
 }
 
 f2py() {
