@@ -54,6 +54,8 @@ package() {
 		
 	python3 setup.py bdist_wheel
 	
+	cp -r ./dist/ "$pkgdir"
+	
 	ls
 	
 }
