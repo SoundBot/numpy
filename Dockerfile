@@ -5,7 +5,7 @@ RUN apk add wget alpine-sdk sudo
 COPY cython.apk cython.apk 
 RUN apk add ./cython.apk --allow-untrusted
 
-RUN pyton3 -m pip install cython
+RUN python3 -m pip install cython
 
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 RUN addgroup appuser abuild
