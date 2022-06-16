@@ -12,7 +12,7 @@ WORKDIR /home/appuser
 
 RUN abuild-keygen -a -i -n
 
-RUN wget -O cython.apk https://github.com/SoundBot/cython/suites/6967666199/artifacts/272160639
+ADD cython.apk cython.apk
 RUN apk add ./cython.apk
 
 RUN wget https://git.alpinelinux.org/aports/plain/community/py3-numpy/APKBUILD
